@@ -4,12 +4,16 @@ var confirmNumber;
 var confirmCharacter;
 var confirmUppercase;
 var confirmLowercase;
+
 // Special characters 
 character = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
+
 // Numeric characters
 number = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
 // Alphabetical characters
 alpha = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+
 // Space is for the Uppercase conversion
 space = [];
 
@@ -32,7 +36,7 @@ get.addEventListener("click", function () {
 
 // Start function to generate password
 function generatePassword() {
-    // Asks for user input
+    // Asks for user input using parseInt and prompt
     enter = parseInt(prompt("How many characters would you like your password? Choose between 8 and 128"));
     // First if statement for user validation 
     if (!enter) {
@@ -57,13 +61,14 @@ function generatePassword() {
     }
 
     // First if statement that uses user input prompts to determine choices
-    // Else if for 4 positive options
+
+    // Else if for 4 positive options using concat
     else if (confirmCharacter && confirmNumber && confirmUppercase && confirmLowercase) {
 
         choices = character.concat(number, alpha, alpha2);
     }
 
-    // Else if for 3 positive options
+    // Else if for 3 positive options using concat
     else if (confirmCharacter && confirmNumber && confirmUppercase) {
         choices = character.concat(number, alpha2);
     }
@@ -77,7 +82,7 @@ function generatePassword() {
         choices = number.concat(alpha, alpha2);
     }
 
-    // Else if for 2 positive options 
+    // Else if for 2 positive options using concat
     else if (confirmCharacter && confirmNumber) {
         choices = character.concat(number);
 
@@ -107,7 +112,7 @@ function generatePassword() {
     else if (confirmLowercase) {
         choices = alpha;
     }
-    // Created space variable to fill uppercase conversion
+    // Created space variable to fill uppercase conversion 
     else if (confirmUppercase) {
         choices = space.concat(alpha2);
     };
@@ -115,7 +120,7 @@ function generatePassword() {
     // password variable is an array placeholder for user generated amount of length
     var password = [];
 
-    // Random selection for all variables: 
+    // Random selection for all variables using both Math.floor an Math.random, then pushing the array
     for (var i = 0; i < enter; i++) {
         var pickChoices = choices[Math.floor(Math.random() * choices.length)];
         password.push(pickChoices);
@@ -131,16 +136,4 @@ function generatePassword() {
 function UserInput(ps) {
     document.getElementById("password").textContent = ps;
 
-}
-
-var copy = document.querySelector("#copy");
-copy.addEventListener("click", function () {
-    copyPassword();
-});
-
-// This copies the password value - works
-function copyPassword() {
-    document.getElementById("password").select();
-    document.execCommand("Copy");
-    alert("Password copied to clipboard!");
-}
+};
