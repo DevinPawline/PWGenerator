@@ -22,9 +22,10 @@ var choices;
 // converts letters to uppercase 
 var toUpper = function (x) {
     return x.toUpperCase();
-};
+}; 
 
-// creates a variable for uppercase conversion
+
+// Creates a variable for uppercase conversion (used additional resources to learn this process)
 alpha2 = alpha.map(toUpper);
 
 var get = document.querySelector("#generate");
