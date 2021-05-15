@@ -118,7 +118,7 @@ function generatePassword() {
         choices = space.concat(alpha2);
     };
 
-    // password variable is an array placeholder for user generated amount of length
+    // Password variable is an array placeholder for user generated amount of length
     var password = [];
 
     // Random selection for all variables using both Math.floor an Math.random, then pushing the array
@@ -126,7 +126,7 @@ function generatePassword() {
         var pickChoices = choices[Math.floor(Math.random() * choices.length)];
         password.push(pickChoices);
     }
-    // This joins the password array and converts it to a string
+    // This joins the password array and converts it to a string using .join
     var ps = password.join("");
     UserInput(ps);
     return ps;
