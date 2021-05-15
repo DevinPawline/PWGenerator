@@ -1,3 +1,4 @@
+
 # Password Generator 
 Created a password generator using skeleton code given to us to get us started. I ended up using some additional resources online/some of our lessons this past week to make the JS run more efficently.
 
@@ -22,4 +23,4 @@ THEN the password is either displayed in an alert or written to the page
 https://devinpawline.github.io/PasswordGenerator/
 
 # Video of Functionality:
-
+https://user-images.githubusercontent.com/79121046/118371158-40564d00-b579-11eb-8615-ea33b42cc02c.mp4
