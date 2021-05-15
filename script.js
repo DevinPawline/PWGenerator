@@ -11,7 +11,7 @@ character = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/
 // Numeric characters
 number = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-// Alphabetical characters
+// Alphabetical characters, will use an uppercase conversion to create alpha2 
 alpha = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
 // Space is for the Uppercase conversion
@@ -19,13 +19,13 @@ space = [];
 
 // Choices declared outside the if statement so they can be concatenated upon condition
 var choices;
-// converts letters to uppercase 
+// converts letters to uppercase, return x (any) to uppercase
 var toUpper = function (x) {
     return x.toUpperCase();
 }; 
 
 
-// Creates a variable for uppercase conversion (used additional resources to learn this process)
+// Creates a variable for uppercase conversion (used additional resources to learn this process) instead of having two seperate variables for upper and lower case 
 alpha2 = alpha.map(toUpper);
 
 var get = document.querySelector("#generate");
@@ -39,23 +39,23 @@ get.addEventListener("click", function () {
 function generatePassword() {
     // Asks for user input using parseInt and prompt
     enter = parseInt(prompt("How many characters would you like your password? Choose between 8 and 128"));
-    // First if statement for user validation 
+    // First if statement for user validation, making sure they entered a value
     if (!enter) {
         alert("This needs a value");
     } else if (enter < 8 || enter > 128) {
-        // Validates user input
+        // Validates user input to make sure they entered a number
         // Start user input prompts
         enter = parseInt(prompt("You must choose between 8 and 128"));
 
     } else {
-        // Continues once user input is validated
+        // Continues once user input is validated, confirms for what it will contain
         confirmNumber = confirm("Will this contain numbers?");
         confirmCharacter = confirm("Will this contain special characters?");
         confirmUppercase = confirm("Will this contain Uppercase letters?");
         confirmLowercase = confirm("Will this contain Lowercase letters?");
     };
 
-    // Else if for 4 negative options
+    // Else if for 4 negative options, if they choose nothing 
     if (!confirmCharacter && !confirmNumber && !confirmUppercase && !confirmLowercase) {
         choices = alert("You must choose a criteria!");
 
