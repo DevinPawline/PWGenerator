@@ -37,4 +37,8 @@ THEN the password is either displayed in an alert or written to the page
 https://devinpawline.github.io/PasswordGenerator/
 
 # Video of Functionality:
-https://user-images.githubusercontent.com/79121046/118371158-40564d00-b579-11eb-8615-ea33b42cc02c.mp4
+
+
+https://user-images.githubusercontent.com/79121046/133895416-e5312490-1004-46e4-810f-f31d4d3b363f.mp4
+
+
